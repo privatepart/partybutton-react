@@ -1,6 +1,6 @@
 {
   "name": "partybutton-react",
-  "version": "0.0.7",
+  "version": "0.0.18",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -8,7 +8,10 @@
     "dist"
   ],
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "demo-server": "npm install --prefix demo/server && nodemon demo/server/index",
+    "demo-client": "npm install --prefix demo/client && npm run dev --prefix demo/client",
+    "demo": "concurrently \"npm run demo-server\" \"npm run demo-client\""
   },
   "author": "@skogard",
   "license": "MIT",
@@ -20,6 +23,7 @@
     "assert": "^2.0.0",
     "babel-loader": "^8.2.5",
     "buffer": "^6.0.3",
+    "concurrently": "^7.2.2",
     "crypto-browserify": "^3.12.0",
     "https-browserify": "^1.0.0",
     "os-browserify": "^0.3.0",
@@ -33,7 +37,6 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "privatepartyjs": "^0.0.30",
-    "web3": "^1.7.4"
+    "privatepartyjs": "^0.0.37"
   }
 }
