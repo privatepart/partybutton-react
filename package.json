@@ -1,6 +1,6 @@
 {
   "name": "partybutton-react",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -37,6 +37,6 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "privatepartyjs": "^0.0.37"
+    "privatepartyjs": "^0.0.40"
   }
 }

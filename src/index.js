@@ -33,7 +33,8 @@ export default function Button (props) {
   const logout = props.logout ? props.logout : { message: "logout", style: login.style }
   if (!logout.style) logout.style = login.style
   const host = props.host ? props.host : null
-  const payload = props.payload ? props.payload: undefined
+  const payload = props.payload ? props.payload : undefined
+  const options = props.options ? props.options : undefined
   const [session, setSession] = useState(null)
   const party = useRef({})
   const toggle = async () => {
@@ -46,7 +47,7 @@ export default function Button (props) {
       }
     } else {
       try {
-        let s = await party.current.connect(props.role, payload)
+        let s = await party.current.connect(props.role, payload, options)
         setSession(s)
       } catch (e) {
         if (props.onError) props.onError(e)
